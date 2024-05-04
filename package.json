@@ -6,10 +6,16 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "lint": "eslint . --ext .js,.jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "deploy": "npm run build",
+    "test": "jest", 
+    "clean": "rimraf dist", 
+    "prepare": "npm run lint && npm run test", 
+    "predeploy": "npm run prepare && npm run build"
   },
   "dependencies": {
+    "homepage" : "https://MoussaBenboudina.github.io/Editor-online",
     "@chakra-ui/react": "^2.8.2",
     "@monaco-editor/react": "^4.6.0",
     "axios": "^1.6.8",
